@@ -4,3 +4,4 @@ dist
 # Personal notes, kept out of the public repo
 APRENDIZAJES.md
 LINKEDIN.md
+*.tsbuildinfo
