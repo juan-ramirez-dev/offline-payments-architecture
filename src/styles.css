@@ -247,6 +247,8 @@ p { margin: 0; }
 .app { height: 100%; position: relative; }
 .screen { height: 100%; overflow-y: auto; scrollbar-width: none; }
 .screen::-webkit-scrollbar { display: none; }
+/* Las pantallas tienen alto fijo: si el contenido no cabe, hacen scroll en vez de encoger sus elementos. */
+.screen > *, .center-state > * { flex-shrink: 0; }
 
 /* ---------- Componentes comunes ---------- */
 
@@ -530,10 +532,14 @@ p { margin: 0; }
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  justify-content: safe center;
   text-align: center;
   gap: 8px;
   padding: 24px;
+  overflow-y: auto;
+  scrollbar-width: none;
 }
+.center-state::-webkit-scrollbar { display: none; }
 .center-state .btn { margin-top: 24px; }
 .center-state__title { font-size: 19px; font-weight: 700; margin-top: 8px; }
 .result-amount { font-size: 34px; font-weight: 700; }
